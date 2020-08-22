@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>HeavyBoxes - Example 1</title>
+
+		<script type="text/javascript" charset="utf-8" src="lib/prototype.js"></script>
+		<script type="text/javascript" src="lib/box2d.js"></script>
+		<script type="text/javascript" src="app/heavyboxes.js"></script>
+		<link rel="stylesheet" href="style/examples.css" type="text/css" media="screen" charset="utf-8">
+    </head>   
+    
+	<script type="text/javascript" charset="utf-8">
+	var heavyBoxes = null;
+	var twitterUser = "rianflo";
+
+	Event.observe(window, 'load', function() {
+		// 1: Initialize the physics world inside the world div with walls
+		heavyBoxes = new HeavyBoxes($('world'));            
+		heavyBoxes.run();
+
+		// 2: create a dom element or tree of elements (don't attach it yet)
+		var newDiv = document.createElement("div");
+			newDiv.style.width="120px";
+			newDiv.style.height="60px";
+			newDiv.style.border="1px solid white";
+			newDiv.style.backgroundColor="green"
+			newDiv.innerHTML = "Node Physics";
+
+		// 3: add physics body and add to world/DOM add at position (120, 60) with initial velocity (-10, 0)
+		var actor = heavyBoxes.addBox(120, 60, newDiv, 20, 3);
+	});
+	</script>
+
+	<body class="laundry">
+		<div class="background">
+			<div id="world">
+			</div>
+		</div>
+	</body>
+</html>
+

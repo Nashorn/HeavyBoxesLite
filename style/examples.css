@@ -1,0 +1,25 @@
+body {
+    margin:0;
+    padding:0;
+    border:0;
+    font-family: sans-serif;
+    background: #333;
+}
+
+body .background {
+    margin:0;
+    padding:0;
+    border:0;
+    width:100%;
+    background: #333;
+}
+
+body #world {
+    width: 600px;
+    height: 500px;
+    padding:0;
+    margin: 20px auto;
+    position:relative;
+    border: 8px solid #aaa;
+}
+
